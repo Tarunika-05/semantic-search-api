@@ -1,4 +1,5 @@
 from fastapi import APIRouter, HTTPException, Query, Request
+from fastapi.responses import RedirectResponse
 from pydantic import BaseModel
 import numpy as np
 
@@ -227,6 +228,11 @@ async def cluster_analysis(request: Request):
         dominant_clusters=state.dominant_clusters,
         embeddings=state.embeddings,
     )
+
+
+@router.get("/", include_in_schema=False)
+async def root():
+    return RedirectResponse(url="/docs")
 
 
 @router.get("/health")
