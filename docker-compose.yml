@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  semantic-search:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount cache files so index and clustering don't rebuild on every container restart
+      - ./data:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
+    # Limit memory to prevent OOM kills on small host machines (model + FAISS + GMM takes ~1.5GB)
+    deploy:
+      resources:
+        limits:
+          memory: 3G

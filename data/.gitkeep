@@ -1,0 +1,1 @@
+# This file ensures Git tracks the 'data' directory, even though all cache files inside it are ignored.
