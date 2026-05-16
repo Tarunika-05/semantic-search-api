@@ -1,5 +1,7 @@
 # Semantic Search API: Powered by Cognitive RAG & Semantic Caching
 
+Live Demo: https://huggingface.co/spaces/TarunikaHF/sematic-search-api
+
 ## Overview
 An enterprise-grade retrieval backend designed for sub-millisecond **Retrieval-Augmented Generation (RAG)** context provisioning. 
 Engineered with a dual-encoder hybrid architecture (FAISS dense vector similarity + Okapi BM25 sparse lexical matching) and accelerated by a custom probabilistic GMM cluster-aware semantic cache to massively reduce LLM inference latency.
